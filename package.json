@@ -1,0 +1,45 @@
+{
+  "name": "whatsapp-group-contact-extractor",
+  "version": "2.0.0",
+  "description": "A robust CLI bot that extracts contacts from WhatsApp groups and exports them as CSV/JSON using the Baileys library.",
+  "author": "Cristiano Galdino",
+  "license": "MIT",
+  "type": "module",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "lint": "eslint src/ --ext .js",
+    "lint:fix": "eslint src/ --ext .js --fix"
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.7.9",
+    "csv-writer": "^1.6.0",
+    "dotenv": "^16.4.5",
+    "inquirer": "^9.3.7",
+    "p-limit": "^6.2.0",
+    "pino": "^9.3.2",
+    "pino-pretty": "^11.2.2",
+    "qrcode-terminal": "^0.12.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  },
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "contacts",
+    "extractor",
+    "baileys",
+    "csv",
+    "cli",
+    "nodejs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cris-Galdino/Bot-Extrair-Contato-Zap"
+  }
+}

@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  whatsapp-extractor:
+    build: .
+    container_name: whatsapp-contact-extractor
+    image: whatsapp-group-extractor:latest
+    stdin_open: true # Needed for interactive manual QR scan
+    tty: true       # Needed for interactive manual QR scan
+    volumes:
+      - ./session:/app/session # Persist authentication session
+      - ./output:/app/output   # Output folder for CSV/JSON files
+    environment:
+      - NODE_ENV=production
+      - LOG_LEVEL=info
+      - EXPORT_FORMAT=csv
+      - CONCURRENCY_LIMIT=5
+      - SESSION_DIR=/app/session
+      - OUTPUT_DIR=/app/output
+      - RUNNING_IN_DOCKER=true
+    restart: unless-stopped
